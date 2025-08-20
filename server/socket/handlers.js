@@ -11,8 +11,6 @@ export const initSocketServer = (server, configs = {}) => {
     });
 
     io.on('connection', (socket) => {
-        console.log("User connected:", socket.id);
-
         socket.on('join_channel', (channelID) => {
             socket.join(channelID);
         });

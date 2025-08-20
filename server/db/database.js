@@ -1,7 +1,6 @@
 import { createClient } from "@libsql/client";
 import dotenv from "dotenv";
 
-import { encodeEmoji } from '../utils/encoders.js'
 dotenv.config();
 
 export const db = createClient({

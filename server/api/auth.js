@@ -45,10 +45,7 @@ export const AuthHandlers = (app) => {
     app.post("/api/login", async (req, res) => {
         try {
             const { username, password } = req.body;
-            console.log(`Body: [${username}][${password}]`)
             const StoredUser = await GetUser(username);
-
-            console.log("Llega ", username, StoredUser);
 
             if (!StoredUser)
                 return res.status(401).send({message: "User doesn't exists"});
