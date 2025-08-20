@@ -8,6 +8,17 @@ export const initApiHandlers = (app) => {
         res.json({ message: 'Welcome to the API' });
     });
 
+    const distPath = path.join(process.cwd(), "dist");
+
+    if (fs.existsSync(distPath)) {
+        console.log("Hosting front build...");
+
+        app.use(express.static(distPath));
+        app.get("/", (req, res) => {
+            res.sendFile(path.join(distPath, "index.html"));
+        });
+    }
+
     AuthHandlers(app);
     ChannelHandlers(app);
     MessagesHandlers(app);
