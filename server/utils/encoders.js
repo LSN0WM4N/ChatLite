@@ -1,0 +1,1 @@
+export const encodeEmoji = (emoji) => emoji.codePointAt(0).toString(16);

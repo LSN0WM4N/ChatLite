@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+#build 
+dist/
+
+# Logs
+
+# React 
+node_modules
+dist
+dist-ssr
+*.local

@@ -1,0 +1,1 @@
+export const decodeEmoji = (emoji) => String.fromCodePoint(parseInt(emoji, 16));

@@ -1,0 +1,16 @@
+{
+	"dependencies": {
+		"@libsql/client": "^0.15.11",
+		"bcryptjs": "^3.0.2",
+		"cors": "^2.8.5",
+		"dotenv": "^17.2.1",
+		"express": "^5.1.0",
+		"multer": "^2.0.2",
+		"path": "^0.12.7",
+		"socket.io": "^4.8.1",
+		"uuid": "^11.1.0"
+	},
+	"scripts": {
+		"dev": "node --watch index.js"
+	}
+}

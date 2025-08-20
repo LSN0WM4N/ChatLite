@@ -1,0 +1,3 @@
+export const DEFAULT_PFP = ""
+export const LOADING_PFP = "https://media.istockphoto.com/id/1033704156/vector/loading-circle-icon-progress-loading-vector-icon-update-icon.jpg?s=612x612&w=0&k=20&c=Ap_ELUDTrZj1jRFqbqBfKipF6Y_4C8QRgwWf0NFLDw0=";
+export const WRONG_PFP = "https://media.istockphoto.com/id/1131230925/vector/check-marks-red-cross-icon-simple-vector.jpg?s=612x612&w=0&k=20&c=8oNof6faYkfOn1O6CAOHwpSmAhq3IK9hY_D3icbaQps="
