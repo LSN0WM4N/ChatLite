@@ -19,7 +19,6 @@ export const SocketProvider = ({ children }) => {
             cors: {
                 origin: [
                     "http://localhost:3000",       
-                    process.env.VITE_BACKEND_URL 
                 ],
                 methods: ["GET", "POST"],
                 credentials: true

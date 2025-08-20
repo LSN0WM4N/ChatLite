@@ -80,6 +80,7 @@ export const FilesHandlers = (app) => {
 
     app.get('/api/photo', async (req, res) => {
         const { UUID, type = 'group' } = req.query;
+
         if (!UUID) {
             res.status(400).send('Bad request');
             return;
@@ -88,7 +89,9 @@ export const FilesHandlers = (app) => {
         try {
             const image = await GetPhoto(UUID);
             const filename = image?.photoUrl?.split('/').at(-1)
-            const base_url = `${process.env.HOST}/uploads`
+            const isLocalHost = process.env.HOST[0] === '1';
+            const base_url = `${isLocalHost ? 'http://' : ''}${process.env.HOST}${isLocalHost ? ":3000" : ""}/uploads`
+            console.log(`URL:[${base_url}] [${filename}]`,);
             const exists = existsSync(`${process.cwd()}/uploads/${filename}`);
             res.send({photoUrl: `${base_url}/${exists ? filename : (type + '-symbol.svg')}`});
         } catch (error) {
