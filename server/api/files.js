@@ -88,7 +88,7 @@ export const FilesHandlers = (app) => {
         try {
             const image = await GetPhoto(UUID);
             const filename = image?.photoUrl?.split('/').at(-1)
-            const base_url = `${process.env.HOST}:${process.env.PORT}/uploads`
+            const base_url = `${process.env.HOST}/uploads`
             const exists = existsSync(`${process.cwd()}/uploads/${filename}`);
             res.send({photoUrl: `${base_url}/${exists ? filename : (type + '-symbol.svg')}`});
         } catch (error) {
