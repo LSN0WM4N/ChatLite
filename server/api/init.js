@@ -13,6 +13,8 @@ export const initApiHandlers = (app) => {
 
     const distPath = path.join(process.cwd(), "frontend");
 
+    console.log("Deploy frontend path => ", distPath);
+
     AuthHandlers(app);
     ChannelHandlers(app);
     MessagesHandlers(app);
