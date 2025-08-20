@@ -15,14 +15,20 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
 
-        const socketIo = io(import.meta.env.VITE_BACKEND_URL,
-            {
-                reconnection: true,           
-                reconnectionAttempts: 5,      
-                reconnectionDelay: 2000,      
-                transports: ["websocket"],    
-            }
-        ); 
+       const socketIo = io(import.meta.env.VITE_BACKEND_URL, {
+            cors: {
+                origin: [
+                    "http://localhost:3000",       
+                    process.env.VITE_BACKEND_URL 
+                ],
+                methods: ["GET", "POST"],
+                credentials: true
+            }, 
+            reconnection: true,           
+            reconnectionAttempts: 5,      
+            reconnectionDelay: 2000,      
+            transports: ["websocket"],    
+        }); 
         setSocket(socketIo);
 
 
