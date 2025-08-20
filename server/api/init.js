@@ -22,7 +22,7 @@ export const initApiHandlers = (app) => {
         console.log("Hosting front build...");
 
         app.use(express.static(distPath));
-        app.get(/.*/, (req, res) => {
+        app.get(/^(?!\/api).*/, (req, res) => {
             res.sendFile(path.join(distPath, "index.html"));
         });
     }
