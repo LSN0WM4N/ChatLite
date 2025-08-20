@@ -10,7 +10,7 @@ To build the application just run:
 
 and to run, execute: 
 
-    node ./server/index.js
+    cd server & node ./index.js
 
 
 ## Architecture
