@@ -7,8 +7,7 @@ npm ci
 npm run build
 cd ..
 
-rm -rf server/frontend
-cp -r client/dist server/frontend
+cp -r client/dist frontend
 
 cd server
 npm ci
