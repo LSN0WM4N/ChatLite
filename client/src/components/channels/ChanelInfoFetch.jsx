@@ -27,8 +27,6 @@ export const ChannelInfoFetch = () => {
                     params: { ChannelID: ID }
                 });
 
-                console.log(res.data);
-
                 setValues({
                     name: res.data.Title,
                     CreatorID: res.data.CreatorID,

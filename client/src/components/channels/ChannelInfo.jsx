@@ -35,8 +35,6 @@ export const ChannelInfo = () => {
 
     }, [ID, channels]);
     
-    console.log(values.CreatorID, UserID);
-    
     const handleChange = (e) => {
         e.preventDefault();
         setValues(prev => ({

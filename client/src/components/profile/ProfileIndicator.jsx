@@ -15,7 +15,6 @@ export const ProfileIndicator = () => {
 		<div
 			className="flex items-center mb-4 cursor-pointer"
 			onClick={() => {
-				console.log('Entra aca');
 				dispatch(hideChannels());				
 				navigate('/profile') 
 			}}
