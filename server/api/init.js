@@ -13,18 +13,18 @@ export const initApiHandlers = (app) => {
 
     const distPath = path.join(process.cwd(), "frontend");
 
-    if (existsSync(distPath)) {
-        console.log("Hosting front build...");
-
-        app.use(express.static(distPath));
-        app.get("/", (req, res) => {
-            res.sendFile(path.join(distPath, "index.html"));
-        });
-    }
-
     AuthHandlers(app);
     ChannelHandlers(app);
     MessagesHandlers(app);
     FilesHandlers(app);
+
+    if (existsSync(distPath)) {
+        console.log("Hosting front build...");
+
+        app.use(express.static(distPath));
+        app.get(/.*/, (req, res) => {
+            res.sendFile(path.join(distPath, "index.html"));
+        });
+    }
 }
 
